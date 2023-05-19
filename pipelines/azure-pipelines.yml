@@ -1,0 +1,19 @@
+pool: llinux-agent
+ # vmImage: 'ubuntu-latest'
+
+variables:
+  host: vm-devops-agent-01
+
+stages: 
+- stage: Test 
+  jobs:
+  - job: Performancetesting 
+    timeoutInMinutes: 20 
+    steps:
+    - script: |
+          jmeter -n -s -J server.rmi.ssl.disable=true -t PT.jmx -l testresults.jtl
+    - task: PublishPipelineArtifact@1
+      displayName: Publish JMeter Report
+      inputs:
+        targetPath: jmeter/report
+        artifact: jmeter
