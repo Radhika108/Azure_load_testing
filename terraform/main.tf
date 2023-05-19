@@ -1,6 +1,10 @@
 data "azurerm_container_registry" "jmeter_acr" {
   name                = var.JMETER_ACR_NAME
   resource_group_name = var.JMETER_ACR_RESOURCE_GROUP_NAME
+  login_server = $(TF_VAR_JMETER_LOGIN_SERVER)
+  admin_username = $(TF_VAR_JMETER_ADMIN_USERNAME)
+  admin_password = $(TF_VAR_JMETER_ADMIN_PASSWORD)
+  
 }
 
 resource "random_id" "random" {
