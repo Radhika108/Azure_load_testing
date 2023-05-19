@@ -1,5 +1,5 @@
 output "resource_group_name" {
-  value = data.azurerm_resource_group.azurerm_resource_group_vnet.name
+  value = azurerm_resource_group.jmeter_rg.name
 }
 
 output "storage_account_name" {
