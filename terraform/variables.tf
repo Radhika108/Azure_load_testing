@@ -68,20 +68,20 @@ variable "JMETER_ACR_RESOURCE_GROUP_NAME" {
   default = ""
 }
 
-variable "JMETER_LOGIN_SERVER" {
-  type    = string
-  default = ""
-}
+# variable "JMETER_LOGIN_SERVER" {
+#   type    = string
+#   default = ""
+# }
 
-variable "JMETER_ADMIN_USERNAME" {
-  type    = string
-  default = ""
-}
+# variable "JMETER_ADMIN_USERNAME" {
+#   type    = string
+#   default = ""
+# }
 
-variable "JMETER_ADMIN_PASSWORD" {
-  type    = string
-  default = ""
-}
+# variable "JMETER_ADMIN_PASSWORD" {
+#   type    = string
+#   default = ""
+# }
 variable "JMETER_STORAGE_QUOTA_GIGABYTES" {
   type    = number
   default = 1
