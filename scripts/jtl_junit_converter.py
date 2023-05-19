@@ -168,7 +168,7 @@ def create_test_suites(jtl_results_filename, test_name):
 
 def main():
 	print('Converting...') 
-	test_name = 'Load test - Lumina Performance Test'
+	test_name = 'load test'
 	if len(sys.argv) > 3:
 		test_name = sys.argv[3]
     
