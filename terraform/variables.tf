@@ -1,6 +1,6 @@
 variable "RESOURCE_GROUP_NAME" {
   type    = string
-  default = "jmeter"
+  default = "jmeterpt"
 }
 
 variable "LOCATION" {
