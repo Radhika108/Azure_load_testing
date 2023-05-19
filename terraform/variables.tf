@@ -60,12 +60,12 @@ variable "JMETER_DOCKER_PORT" {
 
 variable "JMETER_ACR_NAME" {
   type    = string
-  default = "jmeter_central"
+  default = ""
 }
 
 variable "JMETER_ACR_RESOURCE_GROUP_NAME" {
   type    = string
-  default = "performance_test"
+  default = ""
 }
 
 variable "JMETER_STORAGE_QUOTA_GIGABYTES" {
@@ -76,7 +76,6 @@ variable "JMETER_STORAGE_QUOTA_GIGABYTES" {
 variable "JMETER_JMX_FILE" {
   type        = string
   description = "JMX file"
-  default = "sample.jmx"
 }
 
 variable "JMETER_RESULTS_FILE" {
