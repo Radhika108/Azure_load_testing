@@ -82,7 +82,7 @@ resource "azurerm_container_group" "jmeter_workers" {
   location            = azurerm_resource_group.jmeter_rg.location
   resource_group_name = azurerm_resource_group.jmeter_rg.name
 
-  ip_address_type = "Public"
+  ip_address_type = "Private"
   os_type         = "Linux"
 
   network_profile_id = azurerm_network_profile.jmeter_net_profile.id
@@ -126,7 +126,7 @@ resource "azurerm_container_group" "jmeter_controller" {
   location            = azurerm_resource_group.jmeter_rg.location
   resource_group_name = azurerm_resource_group.jmeter_rg.name
 
-  ip_address_type = "Public"
+  ip_address_type = "Private"
   os_type         = "Linux"
 
   network_profile_id = azurerm_network_profile.jmeter_net_profile.id
