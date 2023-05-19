@@ -1,9 +1,9 @@
 data "azurerm_container_registry" "jmeter_acr" {
   name                = var.JMETER_ACR_NAME
   resource_group_name = var.JMETER_ACR_RESOURCE_GROUP_NAME
-  login_server = var.JMETER_LOGIN_SERVER
-  admin_username = var.JMETER_ADMIN_USERNAME
-  admin_password = var.JMETER_ADMIN_PASSWORD
+#   login_server = var.JMETER_LOGIN_SERVER
+#   admin_username = var.JMETER_ADMIN_USERNAME
+#   admin_password = var.JMETER_ADMIN_PASSWORD
   
 }
 
