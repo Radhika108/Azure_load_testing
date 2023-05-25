@@ -82,7 +82,7 @@ steps:
       echo "`date`: Started!"
       while [ $(az container show -g $RG -n $NAME --query "containers[0].instanceView.currentState.state" -o tsv) == "Running" ]; do
         echo "`date`: Still Running..."
-        sleep 20
+        sleep 30
       done
       echo "`date`: Finished!"
   displayName: 'TEST: Wait Test Execution'
@@ -114,12 +114,12 @@ steps:
          --recursive
   displayName: 'RESULTS: Get JMeter Artifacts'
 
-# - script: |
-#     JMETER_RESULTS=$(JMETER_DIRECTORY_OUTPUT)/jmeter/$(terraform output jmeter_results_file)
-#     JUNIT_RESULTS=$(JMETER_DIRECTORY_OUTPUT)/output.xml
-#     python3 ../scripts/jtl_junit_converter.py $JMETER_RESULTS $JUNIT_RESULTS
-#   workingDirectory: ./terraform
-#   displayName: 'RESULTS: Convert JMeter Results to JUnit Format'
+- script: |
+    JMETER_RESULTS=$(JMETER_DIRECTORY_OUTPUT)/jmeter/$(terraform output jmeter_results_file)
+    JUNIT_RESULTS=$(JMETER_DIRECTORY_OUTPUT)/output.xml
+    python3 ../scripts/jtl_junit_converter.py $JMETER_RESULTS $JUNIT_RESULTS
+  workingDirectory: ./terraform
+  displayName: 'RESULTS: Convert JMeter Results to JUnit Format'
 
 - task: PublishTestResults@2
   inputs:
