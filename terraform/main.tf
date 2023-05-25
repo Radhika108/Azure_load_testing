@@ -116,7 +116,7 @@ resource "azurerm_container_group" "jmeter_workers" {
     commands = [
       "/bin/sh",
       "-c",
-      "cp -r /jmeter/* .; /entrypoint.sh -s -J server.rmi.ssl.disable=true",
+      "cp -r /jmeter/* .; /entrypoint.sh -s -J server.rmi.ssl.disable=true -Djava.rmi.server.hostname=$(ifconfig eth0 | grep 'inet addr:' | awk '{gsub(\"addr:\", \"\"); print $2}')",
     ]
   }
 }
