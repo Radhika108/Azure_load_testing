@@ -25,7 +25,7 @@ variable "SUBNET_ADDRESS_PREFIX" {
 
 variable "JMETER_WORKERS_COUNT" {
   type    = number
-  default = 1
+  default = 2
 }
 
 variable "JMETER_WORKER_CPU" {
